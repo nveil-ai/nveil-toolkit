@@ -43,9 +43,6 @@ jobs:
     name: Publish to PyPI (trusted publishing)
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/project/nveil/
     permissions:
       id-token: write  # OIDC trusted publishing + PEP 740 attestations
     steps:
