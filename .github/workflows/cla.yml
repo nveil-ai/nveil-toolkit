@@ -25,11 +25,10 @@ jobs:
           github.event_name == 'pull_request_target'
         uses: contributor-assistant/github-action@v2.6.1
         env:
+          # Signatures are stored in THIS repo (the cla-signatures branch), so the
+          # built-in GITHUB_TOKEN is enough — no PAT/secret to create. A
+          # PERSONAL_ACCESS_TOKEN would only be needed to store them in a remote repo.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # PAT with `repo` scope (or fine-grained: Contents + Pull requests = write).
-          # Add it as an organization secret named CLA_SIGNATURES_TOKEN on nveil-ai
-          # so all repos share it.
-          PERSONAL_ACCESS_TOKEN: ${{ secrets.CLA_SIGNATURES_TOKEN }}
         with:
           path-to-signatures: 'signatures/cla.json'
           path-to-document: 'https://github.com/nveil-ai/nveil-toolkit/blob/main/CLA.md'
