@@ -1,0 +1,123 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+site_name: NVEIL Toolkit
+site_description: "NVEIL Toolkit — no-code AI data processing and visualization"
+site_url: "https://docs.nveil.com/"
+
+theme:
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: Fira Code
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/extra.css
+
+plugins:
+  - search
+  - section-index
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            docstring_section_style: spacy
+            show_source: false
+            show_root_heading: true
+            show_root_full_path: false
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            members_order: source
+            merge_init_into_class: true
+            show_if_no_docstring: false
+            separate_signature: true
+            signature_crossrefs: true
+            heading_level: 2
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Installation: getting-started/installation.md
+    - Quickstart: getting-started/quickstart.md
+    - Authentication: getting-started/authentication.md
+    - CLI & AI Agents: getting-started/cli.md
+  - Concepts:
+    - concepts/index.md
+    - Privacy Model: concepts/privacy-model.md
+    - Two-Stage Flow: concepts/two-stage-flow.md
+    - Sessions: concepts/sessions.md
+    - Specs & .nveil Files: concepts/specs.md
+  - API Reference:
+    - api-reference/index.md
+    - nveil (top-level): api-reference/nveil.md
+    - NveilSpec: api-reference/nveil-spec.md
+    - Session: api-reference/session.md
+    - Exceptions: api-reference/exceptions.md
+  - Examples:
+    - examples/index.md
+    - Bar Chart: examples/bar-chart.md
+    - Multiple Datasets: examples/multi-dataset.md
+    - Offline Rendering: examples/offline-rendering.md
+  - Versioning: versioning.md
+  - Changelog: changelog.md
+
+copyright: "Copyright &copy; 2025-2026 NVEIL SAS — AGPL-3.0-or-later (commercial license available)"

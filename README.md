@@ -14,7 +14,7 @@
   <a href="https://pypi.org/project/nveil/"><img src="https://img.shields.io/pypi/v/nveil?color=orange&label=PyPI" alt="PyPI"></a>
   <a href="https://pypi.org/project/nveil/"><img src="https://img.shields.io/pypi/pyversions/nveil?color=blue" alt="Python"></a>
   <a href="https://docs.nveil.com"><img src="https://img.shields.io/badge/docs-docs.nveil.com-blue" alt="Docs"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-proprietary-lightgrey" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0--or--later-blue" alt="License"></a>
 </p>
 
 <p align="center">
@@ -195,11 +195,11 @@ Full documentation is available at **[docs.nveil.com](https://docs.nveil.com)**:
 
 ## Contributing
 
-NVEIL is proprietary software. Bug reports and feature requests are welcome via [GitHub Issues](https://github.com/nveil-ai/nveil-toolkit/issues).
+Contributions are welcome under the project's [Contributor License Agreement](CLA.md). Bug reports and feature requests are welcome via [GitHub Issues](https://github.com/nveil-ai/nveil-toolkit/issues).
 
 ## License
 
-Proprietary. See [LICENSE](LICENSE) for details.
+GNU AGPL v3 or later. See [LICENSE](LICENSE). Commercial dual-licensing is available — contact `pierre.jacquet@nveil.com`.
 
 ---
 

@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-FileContributor: Guillaume Franque
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """Scoped session — owns a temporary workspace for the duration of a ``with:`` block.
 
 Usage::
@@ -57,7 +62,7 @@ class Session:
     def generate_spec(self, prompt: str, data: Any) -> NveilSpec:
         """Generate a visualization specification.
 
-        All internal processing is done by the compiled engine.
+        All internal processing is done by the engine.
         The session keeps the pipeline instance alive for render() reuse.
 
         If the server-generated data pipeline fails locally, retries

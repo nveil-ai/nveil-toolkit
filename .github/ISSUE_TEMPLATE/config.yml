@@ -4,5 +4,5 @@ contact_links:
     url: https://docs.nveil.com
     about: Check the documentation before opening an issue.
   - name: Discussions
-    url: https://github.com/nveil-ai/nveil-sdk/discussions
+    url: https://github.com/nveil-ai/nveil-toolkit/discussions
     about: Ask questions and share ideas in Discussions.

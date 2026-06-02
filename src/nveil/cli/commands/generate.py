@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-FileContributor: Guillaume Franque
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """``nveil generate`` — create a spec from a prompt + data file."""
 
 from __future__ import annotations

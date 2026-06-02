@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """Canonical skill source — single place that reads the shipped SKILL.md
 and exposes its parts to the per-target install generators.
 

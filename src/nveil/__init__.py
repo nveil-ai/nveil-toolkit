@@ -204,7 +204,7 @@ def generate_spec(prompt: str, data: Any) -> NveilSpec:
     """Generate a visualization specification from data and a prompt.
 
     Only metadata leaves your machine — never raw data.
-    All internal processing is handled by the compiled engine.
+    All internal processing is handled by the engine.
 
     If the server-generated data pipeline fails locally, the Toolkit retries
     with a new server call (the plan is non-deterministic).

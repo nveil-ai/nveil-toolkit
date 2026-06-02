@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-FileContributor: Guillaume Franque
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """``nveil render`` — re-render a saved .nveil spec against fresh data."""
 
 from __future__ import annotations

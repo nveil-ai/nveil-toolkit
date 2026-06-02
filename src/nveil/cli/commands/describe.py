@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """``nveil describe`` — print a data file's schema for agent grounding.
 
 Minimal JSON payload an AI agent can read before constructing a prompt:

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """``nveil mcp`` — MCP stdio server exposing the CLI subcommands as tools.
 
 Critical invariants (see ``feedback_mcp_stdio_stdout.md``):

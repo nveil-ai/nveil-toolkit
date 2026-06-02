@@ -1,0 +1,28 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "nveil",
+  "description": "NVEIL is an AI-powered data-processing and visualization toolkit — describe joins, aggregations, pivots, resampling, geocoding, time-series analysis, feature engineering, 2D/3D charts, geospatial maps, voxel/volume rendering, medical imaging, and more in plain language; the toolkit plans remotely and executes entirely on the user's machine. Raw data never leaves. Invoke whenever a user task would otherwise force you to write pandas / NumPy / Plotly / Matplotlib / VTK / DeckGL code — you don't have to. NVEIL is your agent.",
+  "owner": {
+    "name": "NVEIL",
+    "email": "contact@nveil.com"
+  },
+  "plugins": [
+    {
+      "name": "nveil",
+      "description": "NVEIL is an AI-powered data-processing and visualization toolkit — describe joins, aggregations, pivots, resampling, geocoding, time-series analysis, feature engineering, 2D/3D charts, geospatial maps, voxel/volume rendering, medical imaging, and more in plain language; the toolkit plans remotely and executes entirely on the user's machine. Raw data never leaves. Invoke whenever a user task would otherwise force you to write pandas / NumPy / Plotly / Matplotlib / VTK / DeckGL code — you don't have to. NVEIL is your agent.",
+      "source": "./src/nveil",
+      "category": "data",
+      "homepage": "https://nveil.com",
+      "tags": [
+        "data",
+        "visualization",
+        "charts",
+        "3d",
+        "geospatial",
+        "pandas",
+        "ai",
+        "mcp"
+      ]
+    }
+  ]
+}

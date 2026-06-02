@@ -1,18 +1,27 @@
-# Contributing to NVEIL SDK
+# Contributing to NVEIL
 
 Thank you for your interest in NVEIL!
 
-## How to Contribute
+NVEIL is **open source** under the GNU Affero General Public License, version 3
+or later (see [`LICENSE`](LICENSE)), with a commercial dual-licensing option
+for organizations that cannot use the AGPL (see
+[`COMMERCIAL-LICENSE.md`](COMMERCIAL-LICENSE.md)).
 
-NVEIL is proprietary software, but we welcome community feedback:
+## Ways to contribute
 
-- **Bug reports** — Use the [bug report template](https://github.com/nveil-ai/nveil-sdk/issues/new?template=bug_report.yml)
-- **Feature requests** — Use the [feature request template](https://github.com/nveil-ai/nveil-sdk/issues/new?template=feature_request.yml)
-- **Questions** — Start a [discussion](https://github.com/nveil-ai/nveil-sdk/discussions)
-- **Security issues** — See [SECURITY.md](SECURITY.md)
+- **Bug reports** — Use the [bug report template](https://github.com/nveil-ai/nveil-toolkit/issues/new?template=bug_report.yml)
+- **Feature requests** — Use the [feature request template](https://github.com/nveil-ai/nveil-toolkit/issues/new?template=feature_request.yml)
+- **Questions** — Open a [discussion](https://github.com/nveil-ai/nveil-toolkit/discussions)
+- **Security issues** — Please follow [SECURITY.md](SECURITY.md) instead of filing a public issue.
 
-## Code Contributions
+## Code contributions
 
-We do not accept pull requests at this time. The SDK source is published for transparency and to help users understand the API, but development happens internally.
+Pull requests are welcome. To keep NVEIL's dual-licensing model viable, every
+contributor accepts the **Contributor License Agreement** (see [`CLA.md`](CLA.md))
+before their first contribution is merged. Acceptance is electronic — you
+authenticate your account through the contributor-license signing tool when you
+open your first pull request. The CLA is a license grant, **not** an assignment:
+you keep ownership of your contribution and your moral rights.
 
-If you've built something cool with NVEIL, we'd love to hear about it in [Discussions](https://github.com/nveil-ai/nveil-sdk/discussions)!
+For anything beyond a small fix, please open an issue or a discussion first so
+we can agree on the approach before you invest the work.

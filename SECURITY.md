@@ -24,5 +24,5 @@ We will acknowledge your report within 48 hours and provide a timeline for a fix
 ## Security Design
 
 - **Data privacy**: Raw data never leaves your machine. Only metadata (column names, types, aggregate statistics) is sent to the NVEIL server.
-- **Encryption**: All API communication uses HTTPS/TLS. Saved `.nveil` files are AES-256-GCM encrypted.
+- **Transport security**: All API communication uses HTTPS/TLS.
 - **API keys**: Keys are scoped and revocable from your [account settings](https://app.nveil.com).

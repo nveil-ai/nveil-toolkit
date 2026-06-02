@@ -1,9 +1,14 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-FileContributor: Guillaume Franque
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """NveilSpec — opaque visualization specification with local rendering.
 
 Once generated, a spec can be reused unlimited times on new data with
 compatible columns — no API call, no cost.
 
-All internal processing is handled by the compiled engine. The Toolkit
+All internal processing is handled by the engine. The Toolkit
 only stores and passes opaque byte blobs.
 """
 
@@ -63,7 +68,7 @@ class NveilSpec:
         return get_explanation(self._blob)
 
     def save(self, path: str) -> None:
-        """Save to opaque .nveil file (encrypted binary)."""
+        """Save to .nveil file."""
         from dive._engine import save_spec
         save_spec(self._blob, path)
 

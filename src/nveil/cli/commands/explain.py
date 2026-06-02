@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 NVEIL SAS
+# SPDX-FileContributor: Pierre Jacquet
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 """``nveil explain`` — print a .nveil spec's human-readable explanation."""
 
 from __future__ import annotations
