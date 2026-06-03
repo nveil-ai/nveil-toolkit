@@ -108,9 +108,14 @@ def configure(
     verify: bool = True,
     verbose: bool = False,
     timing: bool = False,
-    **kwargs,
+    timeout: float = 120.0,
 ):
     """Configure the global NVEIL client.
+
+    The LLM provider and credentials are not configurable here — they are
+    fixed server-side at setup time (the operator's ``.env``). Point
+    ``base_url`` at your NVEIL server and every request runs on whatever
+    provider that server was set up with.
 
     Args:
         api_key: Your NVEIL API key (starts with ``nveil_``).
@@ -118,13 +123,14 @@ def configure(
         verify: Verify SSL certificates (set ``False`` for local dev with self-signed certs).
         verbose: Enable internal library logging (default: silent).
         timing: Enable timing instrumentation (default: ``False``).
+        timeout: Per-request timeout in seconds (default: ``120``).
     """
     global _client, _timing_enabled
     _timing_enabled = timing
     if verbose:
         for name in ("kedro", "kedro.io", "kedro.runner", "kedro.pipeline", "kedro.framework"):
             _logging.getLogger(name).setLevel(_logging.INFO)
-    _client = NveilClient(api_key=api_key, base_url=base_url, verify=verify, **kwargs)
+    _client = NveilClient(api_key=api_key, base_url=base_url, verify=verify, timeout=timeout)
     _warn_missing_extras()
 
 

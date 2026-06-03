@@ -40,9 +40,11 @@ class TestClientInit:
         headers = client._client.headers
         assert headers["X-API-Key"] == "nveil_test123"
         assert "X-Nveil-Schema-Version" in headers
-        # No LLM headers when provider/key are not provided — server uses default.
+        # The LLM provider/key/endpoint are fixed server-side at setup time —
+        # the client never sends them, regardless of how it's constructed.
         assert "x-nveil-llm-provider" not in headers
         assert "x-nveil-llm-api-key" not in headers
+        assert "x-nveil-llm-base-url" not in headers
         client.close()
 
     def test_context_manager(self):
@@ -52,50 +54,14 @@ class TestClientInit:
 
 
 class TestClientLLMConfig:
-    def test_llm_headers_attached_when_provided(self):
-        client = NveilClient(
-            api_key="nveil_test123",
-            base_url="https://example.com",
-            llm_provider="anthropic",
-            llm_api_key="sk-ant-xyz",
-        )
-        headers = client._client.headers
-        assert headers["X-Nveil-LLM-Provider"] == "anthropic"
-        assert headers["X-Nveil-LLM-API-Key"] == "sk-ant-xyz"
-        # Base URL header is absent when not requested.
-        assert "x-nveil-llm-base-url" not in headers
-        client.close()
-
-    def test_partial_llm_config_raises(self):
-        # provider without key
-        with pytest.raises(ValueError, match="must be set together"):
-            NveilClient(api_key="nveil_test", llm_provider="openai")
-        # key without provider
-        with pytest.raises(ValueError, match="must be set together"):
-            NveilClient(api_key="nveil_test", llm_api_key="sk-x")
-
-    def test_openrouter_via_base_url(self):
-        # Typical OpenRouter usage: provider="openai", a sk-or-... key,
-        # and the OpenRouter v1 endpoint as base URL.
-        client = NveilClient(
-            api_key="nveil_test123",
-            base_url="https://example.com",
-            llm_provider="openai",
-            llm_api_key="sk-or-xyz",
-            llm_base_url="https://openrouter.ai/api/v1",
-        )
-        headers = client._client.headers
-        assert headers["X-Nveil-LLM-Provider"] == "openai"
-        assert headers["X-Nveil-LLM-API-Key"] == "sk-or-xyz"
-        assert headers["X-Nveil-LLM-Base-URL"] == "https://openrouter.ai/api/v1"
-        client.close()
-
-    def test_base_url_alone_raises(self):
-        with pytest.raises(ValueError, match="requires llm_provider and llm_api_key"):
-            NveilClient(
-                api_key="nveil_test",
-                llm_base_url="https://openrouter.ai/api/v1",
-            )
+    def test_llm_config_not_accepted(self):
+        # Per-call LLM configuration was removed: the provider/key/endpoint
+        # are determined solely by the server's setup (.env). Attempting to
+        # pass them is a hard error, not a silent override.
+        with pytest.raises(TypeError):
+            NveilClient(api_key="nveil_test", llm_provider="anthropic", llm_api_key="sk-ant-xyz")
+        with pytest.raises(TypeError):
+            NveilClient(api_key="nveil_test", llm_base_url="https://openrouter.ai/api/v1")
 
 
 class TestHandleResponse401:

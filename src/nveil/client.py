@@ -6,7 +6,6 @@
 """NVEIL API client — handles HTTP communication with the NVEIL server."""
 
 import logging
-from typing import Optional
 
 import httpx
 
@@ -20,16 +19,6 @@ from .exceptions import (
 DEFAULT_BASE_URL = "https://app.nveil.com"
 DEFAULT_TIMEOUT = 120.0
 
-# Headers used by the NVEIL backend to identify the LLM provider/key the
-# caller wants every downstream call (graph nodes, characterization,
-# excel cartograph) to use. Provider+key must be set together; absent →
-# server falls back to its default (Gemini env credentials).
-# Base URL is optional, only meaningful for OpenAI-compatible proxies
-# (OpenRouter, vLLM, Together AI, Azure OpenAI…).
-LLM_PROVIDER_HEADER = "X-Nveil-LLM-Provider"
-LLM_API_KEY_HEADER = "X-Nveil-LLM-API-Key"
-LLM_BASE_URL_HEADER = "X-Nveil-LLM-Base-URL"
-
 
 class NveilClient:
     """HTTP client for the NVEIL public API."""
@@ -40,32 +29,19 @@ class NveilClient:
         base_url: str = DEFAULT_BASE_URL,
         timeout: float = DEFAULT_TIMEOUT,
         verify: bool = True,
-        *,
-        llm_provider: Optional[str] = None,
-        llm_api_key: Optional[str] = None,
-        llm_base_url: Optional[str] = None,
     ):
         """Build a client.
+
+        The LLM provider, credentials and endpoint are NOT configurable
+        from the SDK: they are fixed server-side at setup time (the
+        operator's ``.env``). Every request runs on the server's
+        configured provider — there is no per-call override.
 
         Args:
             api_key: NVEIL platform key (sent as ``X-API-Key``).
             base_url: NVEIL API base URL.
             timeout: Per-request timeout (seconds).
             verify: TLS certificate verification.
-            llm_provider: Optional LLM provider id (``"google_genai"``,
-                ``"openai"``, ``"anthropic"``, ``"mistralai"``). When set
-                — together with ``llm_api_key`` — every request from this
-                client carries provider + key headers, and the NVEIL
-                backend will route all LLM calls through that provider.
-                When omitted, the backend uses its server-side default.
-                The model id itself is never user-chosen: it's resolved
-                per node from the backend's per-provider yaml config.
-            llm_api_key: Provider API key paired with ``llm_provider``.
-            llm_base_url: Optional override for the LLM endpoint, used
-                with OpenAI-compatible proxies (OpenRouter, Together AI,
-                vLLM, Azure OpenAI). Pair with ``llm_provider="openai"``
-                and an OR-style key. Requires ``llm_provider`` +
-                ``llm_api_key`` to also be set.
         """
         from . import __version__
 
@@ -75,16 +51,6 @@ class NveilClient:
                 "Only use this for local development with self-signed certificates."
             )
 
-        if bool(llm_provider) ^ bool(llm_api_key):
-            raise ValueError(
-                "llm_provider and llm_api_key must be set together "
-                "(or both omitted to use the server-side default)."
-            )
-        if llm_base_url and not (llm_provider and llm_api_key):
-            raise ValueError(
-                "llm_base_url requires llm_provider and llm_api_key."
-            )
-
         self._api_key = api_key
         self._base_url = base_url.rstrip("/")
 
@@ -92,11 +58,6 @@ class NveilClient:
             "X-API-Key": api_key,
             "X-Nveil-Schema-Version": __version__,
         }
-        if llm_provider and llm_api_key:
-            headers[LLM_PROVIDER_HEADER] = llm_provider
-            headers[LLM_API_KEY_HEADER] = llm_api_key
-            if llm_base_url:
-                headers[LLM_BASE_URL_HEADER] = llm_base_url
 
         self._client = httpx.Client(
             base_url=self._base_url,

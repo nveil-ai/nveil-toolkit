@@ -10,20 +10,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 License, version 3 or later, with a commercial dual-licensing option for
 organizations that cannot use the AGPL.*
 
-### Added
-
-- **Bring-your-own LLM credentials.** `NveilClient` now accepts
-  `llm_provider`, `llm_api_key`, and `llm_base_url`. When set, they are
-  forwarded to the NVEIL backend (as `X-Nveil-LLM-Provider` /
-  `X-Nveil-LLM-API-Key` / `X-Nveil-LLM-Base-URL` headers) so every
-  downstream step — graph nodes, characterization, and the rest of the
-  pipeline — runs against the LLM you choose. Provider and key go
-  together; if you omit them, the server uses its own default
-  credentials. `llm_base_url` is optional and only matters for
-  OpenAI-compatible proxies (OpenRouter, vLLM, Together AI,
-  Azure OpenAI, …).
-
 ### Changed
+
+- **LLM configuration is server-side only.** The provider, credentials
+  and endpoint are fixed when the operator runs the setup (their
+  `.env`); the SDK never sends them. `NveilClient` / `nveil.configure()`
+  no longer accept `llm_provider`, `llm_api_key`, or `llm_base_url` —
+  point `base_url` at your NVEIL server and every request runs on the
+  provider that server was set up with.
 
 - **Relicensed to AGPL-3.0-or-later.** Previously proprietary, the Toolkit is
   now open source; a separate commercial license remains available for
