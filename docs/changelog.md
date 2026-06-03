@@ -6,8 +6,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [1.4.0] — 2026-06-02
 
-*NVEIL is now open source under the GNU Affero General Public License,
-version 3 or later, with a commercial dual-licensing option for
+*The NVEIL Toolkit is now open source under the GNU Affero General Public
+License, version 3 or later, with a commercial dual-licensing option for
 organizations that cannot use the AGPL.*
 
 ### Added
@@ -25,7 +25,7 @@ organizations that cannot use the AGPL.*
 
 ### Changed
 
-- **Relicensed to AGPL-3.0-or-later.** Previously proprietary, NVEIL is
+- **Relicensed to AGPL-3.0-or-later.** Previously proprietary, the Toolkit is
   now open source; a separate commercial license remains available for
   embedding or closed-source hosting. Outside contributions are welcome
   under the project's Contributor License Agreement.

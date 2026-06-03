@@ -4,9 +4,9 @@ NVEIL is **dual-licensed**.
 
 ## Open-source license
 
-All NVEIL source code — including the `dive`, `choregraph`, and SDK packages — is
-published under the **GNU Affero General Public License, version 3 or later
-(`AGPL-3.0-or-later`)**. See [`LICENSE`](LICENSE) for the full text.
+The source code in this repository is published under the **GNU Affero General
+Public License, version 3 or later (`AGPL-3.0-or-later`)**. See [`LICENSE`](LICENSE)
+for the full text.
 
 You may use, study, modify, and self-host NVEIL freely under those terms. Note in
 particular that **AGPL Section 13** requires that if you run a *modified* version
@@ -18,7 +18,7 @@ of your modified version to that service's users.
 If you cannot — or prefer not to — comply with the AGPL, a **commercial license**
 is available from NVEIL. Typical cases:
 
-- embedding NVEIL (or `dive` / `choregraph`) in a proprietary or closed-source product;
+- embedding NVEIL in a proprietary or closed-source product;
 - offering a modified NVEIL as a hosted service without publishing your changes;
 - operating under an organizational policy that prohibits copyleft licenses.
 
@@ -43,5 +43,5 @@ number 939 296 109, registered office: C/O SATT Linksium, 31 rue Gustave Eiffel,
 **Governing law.** This notice and any commercial license granted under it are
 governed by French law; the courts of Grenoble have jurisdiction.
 
-*Under this dual-licensing model, the full platform is open source; commercial
-licenses, hosting, and support fund its continued development.*
+*Under this dual-licensing model, open-source NVEIL is funded by commercial
+licenses, hosting, and support.*

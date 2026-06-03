@@ -18,7 +18,7 @@ This contributor agreement ("Agreement") documents the rights granted by contrib
 
 "**Material**" means the work of authorship which is made available by Us to third parties. When this Agreement covers more than one software project, the Material means the work of authorship to which the Contribution was Submitted. After You Submit the Contribution, it may be included in the Material.
 
-"**Project**" means any open-source software published by Us, in particular "nveil", "dive", "choregraph" and the associated toolkit/SDK.
+"**Project**" means any open-source software published by Us, in particular "nveil", "choregraph" and the associated toolkit/SDK.
 
 "**Submit**" means any form of electronic, verbal, or written communication sent to Us or our representatives, including but not limited to electronic mailing lists, source code control systems, pull requests, and issue tracking systems that are managed by, or on behalf of, Us for the purpose of discussing and improving the Material, but excluding communication that is conspicuously marked or otherwise designated in writing by You as "Not a Contribution."
 
