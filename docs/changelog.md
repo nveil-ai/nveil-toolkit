@@ -4,6 +4,22 @@ All notable changes to the NVEIL Toolkit will be documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.4.1] — 2026-06-05
+
+### Fixed
+
+- **Server-side-only LLM configuration is now actually shipped.** The 1.4.0
+  release still carried the old client that accepted `llm_provider`,
+  `llm_api_key` and `llm_base_url`; those are now removed from `NveilClient` /
+  `nveil.configure()`. Point `base_url` at your NVEIL server and every request
+  runs on the provider that server was set up with.
+- The `VERSION` file is now included in the sdist (`MANIFEST.in`), so source
+  builds report the correct version.
+
+### Changed
+
+- PyPI summary aligned with the README.
+
 ## [1.4.0] — 2026-06-02
 
 *The NVEIL Toolkit is now open source under the GNU Affero General Public
