@@ -93,6 +93,7 @@ markdown_extensions:
       permalink: true
 
 nav:
+  - "← NVEIL Docs": https://docs.nveil.com/
   - Home: index.md
   - Getting Started:
     - getting-started/index.md
