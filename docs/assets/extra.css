@@ -8,6 +8,9 @@
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
   height: 2.4rem;
+  /* The "NVEIL" wordmark sits high in the logo canvas; nudge down to
+     baseline-align it with the header title text. */
+  transform: translateY(0.25rem);
 }
 
 /* ── Visually hidden context block for LLM readers ──
