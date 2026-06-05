@@ -4,6 +4,12 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+/* Match the docs.nveil.com hub logo size for a consistent header across sites */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.4rem;
+}
+
 /* ── Visually hidden context block for LLM readers ──
    Present in the DOM and text stream so crawlers and language models
    ingest it, but invisible to sighted users and hidden from assistive
