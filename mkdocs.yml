@@ -2,7 +2,7 @@
 # SPDX-FileContributor: Pierre Jacquet
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-site_name: NVEIL Toolkit
+site_name: Toolkit
 site_description: "NVEIL Toolkit: no-code AI data processing and visualization"
 site_url: "https://docs.nveil.com/"
 
