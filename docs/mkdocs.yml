@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 site_name: Toolkit
+docs_dir: pages
 site_description: "NVEIL Toolkit: no-code AI data processing and visualization"
 site_url: "https://docs.nveil.com/"
 
@@ -49,7 +50,7 @@ plugins:
       default_handler: python
       handlers:
         python:
-          paths: [src]
+          paths: [../src]
           options:
             docstring_style: google
             docstring_section_style: spacy

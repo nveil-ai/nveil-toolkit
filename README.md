@@ -195,7 +195,7 @@ Full documentation is available at **[docs.nveil.com](https://docs.nveil.com)**:
 
 ## Contributing
 
-Contributions are welcome under the project's [Contributor License Agreement](CLA.md). Bug reports and feature requests are welcome via [GitHub Issues](https://github.com/nveil-ai/nveil-toolkit/issues).
+Contributions are welcome under the project's [Contributor License Agreement](licensing/CLA.md). Bug reports and feature requests are welcome via [GitHub Issues](https://github.com/nveil-ai/nveil-toolkit/issues).
 
 ## License
 

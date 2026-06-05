@@ -5,7 +5,7 @@ NVEIL is **dual-licensed**.
 ## Open-source license
 
 The source code in this repository is published under the **GNU Affero General
-Public License, version 3 or later (`AGPL-3.0-or-later`)**. See [`LICENSE`](LICENSE)
+Public License, version 3 or later (`AGPL-3.0-or-later`)**. See [`LICENSE`](../LICENSE)
 for the full text.
 
 You may use, study, modify, and self-host NVEIL freely under those terms. Note in

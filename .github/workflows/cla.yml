@@ -31,12 +31,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path-to-signatures: 'signatures/cla.json'
-          path-to-document: 'https://github.com/nveil-ai/nveil-toolkit/blob/main/CLA.md'
+          path-to-document: 'https://github.com/nveil-ai/nveil-toolkit/blob/main/licensing/CLA.md'
           branch: 'cla-signatures'
           allowlist: pierrejacquet,dependabot[bot],github-actions[bot]
           custom-notsigned-prcomment: >-
             Thank you for your contribution! Before we can merge it, please read the
-            [NVEIL Contributor License Agreement](https://github.com/nveil-ai/nveil-toolkit/blob/main/CLA.md)
+            [NVEIL Contributor License Agreement](https://github.com/nveil-ai/nveil-toolkit/blob/main/licensing/CLA.md)
             and sign it by posting the comment below.
           custom-pr-sign-comment: 'I have read the CLA Document and I hereby sign the CLA'
           custom-allsigned-prcomment: 'All contributors have signed the CLA. ✅'
