@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nveil"
 dynamic = ["version", "dependencies"]
-description = "AI-powered data visualization — describe what you want, get production charts. Data stays local."
+description = "AI-powered data visualization toolkit. Describe your data, get production charts, locally."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "AGPL-3.0-or-later"}
