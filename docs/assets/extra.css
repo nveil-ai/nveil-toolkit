@@ -4,83 +4,6 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-/* NVEIL brand overrides for mkdocs-material */
-
-/* Brand palette from the NVEIL logo gradient */
-:root {
-  --nveil-purple: #5c2d91;
-  --nveil-pink: #e91e8c;
-  --nveil-orange: #f7941d;
-  --nveil-yellow: #f9d423;
-  --md-primary-fg-color: var(--nveil-purple);
-  --md-accent-fg-color: var(--nveil-orange);
-}
-
-[data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #7b3fb5;
-  --md-accent-fg-color: #f9a825;
-}
-
-/* ── Header + tabs: unified gradient ── */
-.md-header {
-  background: linear-gradient(135deg, #5c2d91 0%, #9b30a0 40%, #e91e8c 70%, #f7941d 100%);
-}
-
-/* Logo: bigger, site name: smaller */
-.md-header__button.md-logo img {
-  height: 2.4rem;
-}
-.md-header__topic:first-child .md-ellipsis {
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-/* Tabs bar blends into the header gradient */
-.md-tabs {
-  background: transparent;
-}
-.md-tabs__link {
-  opacity: 0.7;
-}
-.md-tabs__link--active,
-.md-tabs__link:hover {
-  opacity: 1;
-}
-
-/* ── Links ── */
-.md-typeset a {
-  color: var(--nveil-orange);
-}
-.md-typeset a:hover {
-  color: var(--nveil-pink);
-}
-
-/* ── Cards ── */
-.md-typeset .grid.cards > ul > li {
-  border: 1px solid rgba(247, 148, 29, 0.15);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.md-typeset .grid.cards > ul > li:hover {
-  border-color: rgba(247, 148, 29, 0.5);
-  box-shadow: 0 4px 20px rgba(247, 148, 29, 0.1);
-}
-
-/* ── Code ── */
-.md-typeset code {
-  border-color: rgba(247, 148, 29, 0.12);
-}
-
-/* ── Navigation ── */
-.md-nav__link--active {
-  color: var(--nveil-orange) !important;
-}
-
-/* ── Images ── */
-.md-typeset img {
-  border-radius: 8px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-}
-
 /* ── Visually hidden context block for LLM readers ──
    Present in the DOM and text stream so crawlers and language models
    ingest it, but invisible to sighted users and hidden from assistive
@@ -96,18 +19,4 @@
   clip-path: inset(50%) !important;
   white-space: nowrap !important;
   border: 0 !important;
-}
-
-/* ── Admonitions with brand colors ── */
-.md-typeset .admonition.tip,
-.md-typeset details.tip {
-  border-color: var(--nveil-orange);
-}
-.md-typeset .tip > .admonition-title,
-.md-typeset .tip > summary {
-  background-color: rgba(247, 148, 29, 0.1);
-}
-.md-typeset .tip > .admonition-title::before,
-.md-typeset .tip > summary::before {
-  background-color: var(--nveil-orange);
 }
